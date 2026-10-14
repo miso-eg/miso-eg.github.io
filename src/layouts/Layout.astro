@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import '../styles/mobile-fix.css';
+import '../styles/character.css';
 import { site, categories } from '../data/site';
 interface Props { title?: string; description?: string; }
 const { title, description = site.description } = Astro.props;
@@ -17,12 +18,12 @@ const nav = [{slug: '', label: 'HOME'}, {slug: 'about', label: 'ABOUT'}, ...cate
     <meta property="og:title" content={title ? `${title} | ${site.name}` : site.name} />
     <meta property="og:description" content={description} /><meta property="og:type" content="website" />
     <meta property="og:url" content={new URL(pathname, Astro.site)} />
-    <meta name="theme-color" content="#faf7ef" /><link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#faf7ef" /><link rel="icon" type="image/jpeg" href="/images/miso-illustration.jpg" />
   </head>
   <body>
     <a class="skip-link" href="#main">本文へ移動</a>
     <header class="header wrap">
-      <a class="brand" href="/" aria-label="みそのホームページ HOME"><span class="brand-mark" aria-hidden="true">m<span>✳</span></span><span>みその<span class="brand-small">ホームページ</span></span></a>
+      <a class="brand" href="/" aria-label="みそのホームページ HOME"><img class="brand-character" src="/images/miso-illustration.jpg" alt="" width="52" height="52" /><span>みその<span class="brand-small">ホームページ</span></span></a>
       <details class="mobile-nav"><summary>MENU <span aria-hidden="true">＋</span></summary><nav aria-label="モバイルナビゲーション">{nav.map(item => <a href={`/${item.slug}${item.slug ? '/' : ''}`} aria-current={pathname === `/${item.slug}${item.slug ? '/' : ''}` ? 'page' : undefined}>{item.label}</a>)}</nav></details>
       <nav class="desktop-nav" aria-label="メインナビゲーション">{nav.map(item => <a href={`/${item.slug}${item.slug ? '/' : ''}`} aria-current={pathname === `/${item.slug}${item.slug ? '/' : ''}` ? 'page' : undefined}>{item.label}</a>)}</nav>
     </header>

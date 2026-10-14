@@ -8,6 +8,6 @@ const tools = works.filter(w => w.data.category === 'tools');
 ---
 <Layout>
   <section class="section wrap"><div class="section-heading"><div><p class="eyebrow">TOOLS</p><h2>ツール一覧</h2></div><a class="text-link" href="/tools/">ツール一覧へ →</a></div><p class="section-intro">ブラウザで使える、自作ツールたち。</p><div class="work-grid">{tools.map(work => <WorkCard work={work} />)}</div></section>
-  <section class="about-band wrap"><div class="about-symbol" aria-hidden="true">m<span>✳</span></div><div><p class="eyebrow">ABOUT</p><h2>つくる純リスナー、みそです。</h2><p>{site.description}</p><a class="text-link" href="/about/">プロフィールを見る →</a></div></section>
+  <section class="about-band wrap"><img class="about-character" src="/images/miso-profile.png" alt="お味噌汁に入って手を振るみそ" width="170" height="170" loading="lazy" /><div><p class="eyebrow">ABOUT</p><h2>つくる純リスナー、みそです。</h2><p>{site.description}</p><a class="text-link" href="/about/">プロフィールを見る →</a></div></section>
   <section class="section wrap"><div class="section-heading"><div><p class="eyebrow">EXPLORE</p><h2>いろいろ、つくっています。</h2></div></div><div class="category-grid">{categories.map(c=><a class="category" href={`/${c.slug}/`}><span class="category-icon" aria-hidden="true">{c.icon}</span><span><strong>{c.label}</strong><small>{c.name}</small></span><span aria-hidden="true">↗</span></a>)}</div></section>
 </Layout>
