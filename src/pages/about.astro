@@ -2,4 +2,38 @@
 import Layout from '../layouts/Layout.astro';
 import { site } from '../data/site';
 ---
-<Layout title="ABOUT"><section class="page-heading wrap"><p class="eyebrow">ABOUT</p><h1>みそについて</h1><p>好きからはじまる、ものづくり。</p></section><section class="profile wrap"><img class="profile-character" src="/images/miso-profile.png" alt="お味噌汁に入って手を振るみそ" width="180" height="180" /><div class="prose"><h2>こんにちは、みそです。</h2><p>ライブ配信を「純リスナー」として楽しんでます。</p><p>またリス活の中で、面白そう・役立ちそうと思ったものをAIや様々なツールを活用しながら作っています。</p><h2>つくっているもの</h2><p>自作ツール、画像・イラスト、LINEスタンプ・絵文字、音楽・BGM、その他の制作物を、このホームページにまとめていきます。</p><h2>SNS・リンク</h2><div class="social-buttons">{site.socials.map(s=><a class="button secondary" href={s.url} target="_blank" rel="noopener noreferrer">{s.label} ↗</a>)}</div></div></section></Layout>
+<Layout title="ABOUT">
+  <section class="page-heading wrap">
+    <p class="eyebrow">ABOUT</p>
+    <h1>みそについて</h1>
+    <p>好きからはじまる、ものづくり。</p>
+  </section>
+  <section class="profile wrap">
+    <img class="profile-character" src="/images/miso-profile.png" alt="お味噌汁に入って手を振るみそ" width="180" height="180" />
+    <div class="prose">
+      <h2>こんにちは、みそです。</h2>
+      <p>ライブ配信を「純リスナー」として楽しんでます。<br />またリス活の中で、面白そう・役立ちそうと思ったものをAIや様々なツールを活用しながら作っています。</p>
+      <h2>名前のこと</h2>
+      <p>名前は「みそ」です。<br />名前のこだわりは無く、地元愛知県の名物をそのままつけています。<br />当初は見る専のつもりでいたので、適当です。</p>
+      <ul>
+        <li>性別はオス。</li>
+        <li>年齢・生年月日は非公開。</li>
+        <li>結婚してます。</li>
+      </ul>
+      <h2>自己紹介</h2>
+      <h3>仕事</h3>
+      <p>仕事は、自動車関係のシステムエンジニアで土日休みです。<br />日中の仕事になるので、配信視聴できるのは夜が多いです。<br />（リモートワーク時は会議などを除いて視聴可能。）</p>
+      <h3>趣味</h3>
+      <ul>
+        <li>リスナー活動</li>
+        <li>マンガ / アニメ<br />名探偵コナン / 法科高校の劣等生 / メイジアン・カンパニー / メイドインアビス / あかね噺 / ブルーロック / リビルドワールド</li>
+        <li>ゲーム（PC（Steam）、スマホ、Switch2）<br />ペルソナ / BIOHAZARD / レイトン / 逆転裁判 / ポケモン</li>
+      </ul>
+      <h2>つくっているもの</h2>
+      <p>自作ツール、画像・イラスト、LINEスタンプ・絵文字、音楽・BGM、その他の制作物を、このホームページにまとめていきます。</p>
+      <h2>SNS・リンク</h2>
+      <div class="social-buttons">{site.socials.map(s => <a class="button secondary" href={s.url} target="_blank" rel="noopener noreferrer">{s.label} ↗</a>)}</div>
+    </div>
+  </section>
+</Layout>
+
