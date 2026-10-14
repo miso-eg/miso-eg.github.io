@@ -3,7 +3,7 @@ import type { CollectionEntry } from 'astro:content';
 import { workPath } from '../lib/works';
 interface Props { work: CollectionEntry<'works'>; }
 const { work } = Astro.props;
-const symbols: Record<string,string> = {tools:'✳',gallery:'▧',videos:'▷',music:'♫',other:'◇',news:'↗'};
+const symbols: Record<string,string> = {tools:'✳',gallery:'▧',line:'☺',music:'♫',other:'◇'};
 ---
 <article class={`work-card tone-${work.data.order % 4}`}>
   <a class="card-link" href={workPath(work.id)}>

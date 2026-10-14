@@ -10,7 +10,6 @@ tags: [イラスト]
 # imageAlt: 画像の内容を説明する文章
 # url: https://example.com/
 # audio: /audio/example.mp3
-# youtubeId: 動画ID11文字
 ---
 ## この作品について
 

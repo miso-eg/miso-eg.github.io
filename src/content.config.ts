@@ -5,12 +5,12 @@ const works = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/works' }),
   schema: z.object({
     title: z.string(), description: z.string(),
-    category: z.enum(['tools', 'gallery', 'videos', 'music', 'other', 'news']),
+    category: z.enum(['tools', 'gallery', 'line', 'music', 'other']),
     date: z.coerce.date(), draft: z.boolean().default(false),
     order: z.number().default(100), tags: z.array(z.string()).default([]),
     url: safeLink.optional(), repository: z.string().url().optional(),
     image: z.string().regex(/^\/(?!\/)/).optional(), imageAlt: z.string().optional(),
-    audio: z.string().regex(/^\/(?!\/)/).optional(), youtubeId: z.string().regex(/^[\w-]{11}$/).optional(),
+    audio: z.string().regex(/^\/(?!\/)/).optional(),
   }),
 });
 export const collections = { works };

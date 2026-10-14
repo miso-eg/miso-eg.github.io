@@ -1,8 +1,8 @@
 # みそのホームページ
 
-Astroで作成した、スマホ優先の個人制作サイト。公開予定URL： https://miso-eg.github.io/
+Astroで作成した、スマホ優先の個人制作サイト。公開URL： https://miso-eg.github.io/
 
-HOME / ABOUT / TOOLS / GALLERY / VIDEOS / MUSIC / OTHER / NEWS を実装しています。
+HOME / ABOUT / TOOLS / GALLERY / LINE / MUSIC / OTHER を実装しています。
 
 ## 手元で確認する
 
@@ -29,20 +29,22 @@ npm run preview
 4. 下書き中は `draft: true` にします。公開するときは `draft: false` に変更します。
 5. mainに反映すると、GitHub Actionsが検証・ビルド・公開します。PRでは検証のみ行います。
 
-category は `tools` / `gallery` / `videos` / `music` / `other` / `news`。dateは `YYYY-MM-DD`、orderは小さい順に表示します。NEWSは日付の新しい順です。
+category は `tools` / `gallery` / `line` / `music` / `other`。dateは `YYYY-MM-DD`、orderは小さい順に表示します。
 
 - 画像を `public/images/` にアップロードし、`image: /images/ファイル名.png` と `imageAlt` を指定します。
 - 音楽を `public/audio/` に追加し、`audio: /audio/ファイル名.mp3` を指定すると再生プレーヤーが表示されます。
-- YouTubeは `youtubeId` にURL中の11文字の動画IDを指定すると埋め込み表示できます。
 - 外部作品へのリンクは `url`、ソースコードは `repository` に指定します。
-- お知らせも同じ形式で `category: news` として追加できます。
 - 存在しない画像・音声のパスは指定せず、アップロードしてから設定してください。
 
-空カテゴリには準備中の表示を用意しています。架空の作品やお知らせは掲載していません。Markdownを公開すると本文もサイトに表示されます。下書きであっても公開GitHubリポジトリ内のファイルは閲覧できます。
+空カテゴリには準備中の表示を用意しています。架空の作品は掲載していません。Markdownを公開すると本文もサイトに表示されます。下書きであっても公開GitHubリポジトリ内のファイルは閲覧できます。
+
+## LINEスタンプ・絵文字を追加する
+
+`templates/line.md` をコピーして `src/content/works/` に追加します。`category: line`、`tags: [LINEスタンプ]` または `tags: [LINE絵文字]` を設定してください。見本画像を `public/images/` に追加し、`image` と `imageAlt`、LINE STOREの商品URLを `url` に設定します。公開時に `draft: false` にするとLINEページに表示されます。
 
 ## プロフィール・SNSの変更
 
-`src/data/site.ts` でサイト情報とSNSリンクを管理します。プロフィールの本文は `src/pages/about.astro` で編集できます。XとGitHubを設定済みです。YouTubeはURLが決まったら `socials` に追加してください。
+`src/data/site.ts` でサイト情報とSNSリンクを管理します。プロフィールの本文は `src/pages/about.astro` で編集できます。XとGitHubを設定済みです。その他のSNSはURLが決まったら `socials` に追加してください。
 
 ## GitHub Pagesで公開する
 
