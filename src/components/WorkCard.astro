@@ -1,0 +1,13 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { workPath } from '../lib/works';
+interface Props { work: CollectionEntry<'works'>; }
+const { work } = Astro.props;
+const symbols: Record<string,string> = {tools:'✳',gallery:'▧',videos:'▷',music:'♫',other:'◇',news:'↗'};
+---
+<article class={`work-card tone-${work.data.order % 4}`}>
+  <a class="card-link" href={workPath(work.id)}>
+    <div class="card-art" aria-hidden="true">{work.data.image ? <img src={work.data.image} alt="" loading="lazy" /> : <><span class="art-orbit"></span><span class="art-symbol">{symbols[work.data.category]}</span><span class="art-caption">{work.data.category.toUpperCase()} / {String(work.data.order).padStart(2,'0')}</span></>}</div>
+    <div class="card-content"><div class="tags">{work.data.tags.map(tag => <span>{tag}</span>)}</div><h3>{work.data.title}<span aria-hidden="true">↗</span></h3><p>{work.data.description}</p><span class="card-more">詳しく見る <span aria-hidden="true">→</span></span></div>
+  </a>
+</article>

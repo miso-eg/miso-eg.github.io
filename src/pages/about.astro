@@ -1,0 +1,5 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { site } from '../data/site';
+---
+<Layout title="ABOUT"><section class="page-heading wrap"><p class="eyebrow">ABOUT</p><h1>みそについて</h1><p>好きからはじまる、ものづくり。</p></section><section class="profile wrap"><div class="profile-avatar" aria-hidden="true">m<span>✳</span></div><div class="prose"><h2>こんにちは、みそです。</h2><p>ライブ配信を「純リスナー」として楽しんでます。</p><p>またリス活の中で、面白そう・役立ちそうと思ったものをAIや様々なツールを活用しながら作っています。</p><h2>つくっているもの</h2><p>自作ツール、画像・イラスト、YouTube動画、音楽・BGM、その他の制作物を、このホームページにまとめていきます。</p><h2>SNS・リンク</h2><div class="social-buttons">{site.socials.map(s=><a class="button secondary" href={s.url} target="_blank" rel="noopener noreferrer">{s.label} ↗</a>)}</div></div></section></Layout>

@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import WorkCard from '../components/WorkCard.astro';
+import { categories } from '../data/site';
+import { publishedWorks, formatDate, workPath } from '../lib/works';
+export function getStaticPaths() { return categories.map(category=>({params:{category:category.slug},props:{category}})); }
+const { category } = Astro.props;
+let works = (await publishedWorks()).filter(w=>w.data.category===category.slug);
+if(category.slug === 'news') works.sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
+---
+<Layout title={category.label} description={category.description}><section class="page-heading wrap"><p class="eyebrow">{category.label}</p><h1>{category.name}</h1><p>{category.description}</p></section><section class="wrap page-content">{works.length ? category.slug==='news' ? <div class="news-list">{works.map(w=><a href={workPath(w.id)}><time datetime={w.data.date.toISOString()}>{formatDate(w.data.date)}</time><span>{w.data.title}</span><span aria-hidden="true">→</span></a>)}</div> : <div class="work-grid">{works.map(work=><WorkCard work={work}/>)}</div> : <div class="empty-state"><span aria-hidden="true">{category.icon}</span><h2>これから、少しずつ。</h2><p>作品を公開したら、ここに追加していきます。</p><a class="text-link" href="/tools/">公開中のツールを見てみる →</a></div>}</section></Layout>
