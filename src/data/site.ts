@@ -4,6 +4,8 @@ export const site = {
   socials: [
     { label: 'X', url: 'https://x.com/_miso_eg' },
     { label: 'GitHub', url: 'https://github.com/miso-eg' },
+    { label: 'Instagram', url: 'https://www.instagram.com/miso.eg' },
+    { label: 'Palmu', url: 'https://app.palmu.jp/users/babb4d3512d14a69b481' },
     // その他のSNSはURLが決まったらここに追加します。
   ],
 };
