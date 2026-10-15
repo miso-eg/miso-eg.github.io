@@ -5,6 +5,8 @@ category: tools
 date: 2026-10-15
 order: 4
 tags: [TikTok LIVE, バトル]
+image: /images/limited-battle-roulette.png
+imageAlt: 限定バトルのカテゴリ選択とルール抽選結果の画面
 url: https://miso-eg.github.io/limited-battle-roulette/
 repository: https://github.com/miso-eg/limited-battle-roulette
 ---
