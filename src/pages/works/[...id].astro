@@ -5,7 +5,7 @@ import { publishedWorks } from '../../lib/works';
 import { categories } from '../../data/site';
 export async function getStaticPaths() { return (await publishedWorks()).map(work=>({params:{id:work.id},props:{work}})); }
 const { work } = Astro.props;
-if (work.data.category === 'tools' && work.data.url) {
+if ((work.data.category === 'tools' || work.data.category === 'line') && work.data.url) {
   return Astro.redirect(work.data.url, 301);
 }
 const { Content } = await render(work);

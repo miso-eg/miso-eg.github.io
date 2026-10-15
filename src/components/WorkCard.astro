@@ -4,12 +4,13 @@ import { workPath } from '../lib/works';
 interface Props { work: CollectionEntry<'works'>; }
 const { work } = Astro.props;
 const isTool = work.data.category === 'tools';
-const href = isTool && work.data.url ? work.data.url : workPath(work.id);
+const isLine = work.data.category === 'line';
+const href = (isTool || isLine) && work.data.url ? work.data.url : workPath(work.id);
 const symbols: Record<string,string> = {tools:'✳',gallery:'▧',line:'☺',music:'♫',other:'◇'};
 ---
 <article class={`work-card tone-${work.data.order % 4}`}>
   <a class="card-link" href={href}>
     <div class="card-art" aria-hidden="true">{work.data.image ? <img src={work.data.image} alt="" loading="lazy" /> : <><span class="art-orbit"></span><span class="art-symbol">{symbols[work.data.category]}</span><span class="art-caption">{work.data.category.toUpperCase()} / {String(work.data.order).padStart(2,'0')}</span></>}</div>
-    <div class="card-content"><div class="tags">{work.data.tags.map(tag => <span>{tag}</span>)}</div><h3>{work.data.title}<span aria-hidden="true">↗</span></h3><p>{work.data.description}</p><span class="card-more">{isTool ? 'ツールを開く' : '詳しく見る'} <span aria-hidden="true">→</span></span></div>
+    <div class="card-content"><div class="tags">{work.data.tags.map(tag => <span>{tag}</span>)}</div><h3>{work.data.title}<span aria-hidden="true">↗</span></h3><p>{work.data.description}</p><span class="card-more">{isTool ? 'ツールを開く' : isLine ? 'LINE STOREで見る' : '詳しく見る'} <span aria-hidden="true">→</span></span></div>
   </a>
 </article>
