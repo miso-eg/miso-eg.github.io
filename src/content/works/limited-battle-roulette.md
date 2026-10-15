@@ -4,7 +4,7 @@ description: 人・コイン・ギフトの縛りをカテゴリ別に抽選。�
 category: tools
 date: 2026-10-15
 order: 4
-tags: [ルール抽選, TikTok LIVE]
+tags: [TikTok LIVE, バトル]
 url: https://miso-eg.github.io/limited-battle-roulette/
 repository: https://github.com/miso-eg/limited-battle-roulette
 ---

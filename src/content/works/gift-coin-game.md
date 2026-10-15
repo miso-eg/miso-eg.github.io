@@ -4,7 +4,7 @@ description: TikTokギフトのコイン数、いくつだっけ？ クイズで
 category: tools
 date: 2026-10-15
 order: 3
-tags: [クイズ, TikTok LIVE]
+tags: [TikTok LIVE, ゲーム]
 url: https://miso-eg.github.io/gift-coin-game/
 repository: https://github.com/miso-eg/gift-coin-game
 ---

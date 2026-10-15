@@ -4,7 +4,7 @@ description: BINGOやギフト消費ミッションの盤面をつくって、PN
 category: tools
 date: 2026-10-15
 order: 1
-tags: [盤面づくり, PNG保存]
+tags: [企画用]
 url: https://miso-eg.github.io/mission_panel_maker/
 repository: https://github.com/miso-eg/mission_panel_maker
 ---

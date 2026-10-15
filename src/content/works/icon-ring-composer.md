@@ -4,7 +4,7 @@ description: アイコンとリングを重ねて、サイズや位置を調整�
 category: tools
 date: 2026-10-15
 order: 2
-tags: [画像合成, スマホ対応]
+tags: [アイコン, 画像編集]
 url: https://miso-eg.github.io/icon-ring-composer/
 repository: https://github.com/miso-eg/icon-ring-composer
 ---
