@@ -5,6 +5,8 @@ category: tools
 date: 2026-10-15
 order: 2
 tags: [アイコン, 画像編集]
+image: /images/icon-ring-composer.png
+imageAlt: みそのアイコンと秋のリングを合成している編集画面
 url: https://miso-eg.github.io/icon-ring-composer/
 repository: https://github.com/miso-eg/icon-ring-composer
 ---
