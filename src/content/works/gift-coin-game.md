@@ -5,6 +5,8 @@ category: tools
 date: 2026-10-15
 order: 3
 tags: [TikTok LIVE, ゲーム]
+image: /images/gift-coin-game.png
+imageAlt: ギフトのコイン数を4択で答えるゲーム画面
 url: https://miso-eg.github.io/gift-coin-game/
 repository: https://github.com/miso-eg/gift-coin-game
 ---
