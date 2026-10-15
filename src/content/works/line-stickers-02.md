@@ -5,6 +5,8 @@ category: line
 date: 2026-10-15
 order: 2
 tags: [LINEスタンプ]
+image: /images/line-stickers-02.png
+imageAlt: はいっ、ありがとう、ごめんなど、みそのLINEスタンプ第2弾の見本
 url: https://store.line.me/stickershop/product/36568841/ja
 ---
 作成したLINEスタンプの第2弾です。
