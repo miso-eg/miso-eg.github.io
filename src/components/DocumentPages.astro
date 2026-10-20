@@ -1,0 +1,37 @@
+---
+interface Props { pages: { title: string; src: string }[]; }
+const { pages } = Astro.props;
+---
+<div class="document-page-reader">
+  <p>各ページの「拡大して読む」で、文字や画像を大きく表示できます。</p>
+  {pages.map((page, i) => <section id={`page-${i+1}`} class="document-page-section">
+    <div class="document-page-heading"><h2>{page.title}</h2><button type="button" class="button secondary document-zoom" data-page-src={page.src} data-page-title={page.title}>拡大して読む</button></div>
+    <img class="document-page-image" src={page.src} alt={`${page.title}のページ全文`} loading="lazy" />
+  </section>)}
+</div>
+<dialog class="document-image-dialog" aria-label="ページの拡大表示">
+  <div class="document-dialog-toolbar"><strong class="document-dialog-title"></strong><button type="button" class="document-fit">全体表示</button><button type="button" class="document-original">原寸で読む</button><button type="button" class="document-close" autofocus>閉じる</button></div>
+  <p class="document-dialog-hint">原寸表示では、上下左右にスクロールして読めます。</p>
+  <div class="document-dialog-scroll" tabindex="0" aria-label="ページ画像。スクロールして閲覧できます"><img class="document-dialog-image" alt="" /></div>
+</dialog>
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>('.document-image-dialog');
+  if (dialog) {
+    const img = dialog.querySelector<HTMLImageElement>('.document-dialog-image')!;
+    const title = dialog.querySelector<HTMLElement>('.document-dialog-title')!;
+    document.querySelectorAll<HTMLButtonElement>('.document-zoom').forEach(button => button.addEventListener('click', () => {
+      img.src = button.dataset.pageSrc!;
+      img.alt = button.dataset.pageTitle!;
+      title.textContent = button.dataset.pageTitle!;
+      img.classList.remove('fit');
+      dialog.showModal();
+      dialog.querySelector('.document-dialog-scroll')!.scrollTo(0, 0);
+    }));
+    dialog.querySelector('.document-close')!.addEventListener('click', () => dialog.close());
+    dialog.querySelector('.document-fit')!.addEventListener('click', () => img.classList.add('fit'));
+    dialog.querySelector('.document-original')!.addEventListener('click', () => img.classList.remove('fit'));
+  }
+</script>
+<style>
+  .document-page-section{margin-block:40px;scroll-margin-top:20px}.document-page-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}.document-page-heading h2{font-size:1.25rem;margin:0}.document-page-heading .button{font-size:.75rem;padding:10px 16px;white-space:nowrap}.document-page-image{width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:white}.document-image-dialog{width:96vw;max-width:1500px;height:94dvh;max-height:94dvh;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink)}.document-image-dialog::backdrop{background:#000a}.document-dialog-toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.document-dialog-toolbar strong{margin-right:auto}.document-dialog-toolbar button{font:inherit;font-size:.8rem;min-height:40px;padding:8px 12px;cursor:pointer;border:1px solid var(--line);border-radius:8px;background:white;color:var(--ink)}.document-dialog-hint{font-size:.75rem;margin:10px 0}.document-dialog-scroll{height:calc(100% - 100px);overflow:auto;background:#e5e5e0;border-radius:6px}.document-dialog-image{display:block;width:1200px;max-width:none;height:auto;margin:auto}.document-dialog-image.fit{width:100%;max-width:1200px}.document-dialog-toolbar button:focus-visible{outline:3px solid var(--ink)}@media(max-width:680px){.document-page-heading{align-items:flex-start;flex-direction:column}.document-page-heading h2{font-size:1.15rem}.document-image-dialog{padding:10px}.document-dialog-toolbar{gap:6px}.document-dialog-toolbar strong{width:100%;font-size:.85rem}.document-dialog-scroll{height:calc(100% - 140px)}}
+</style>

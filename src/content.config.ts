@@ -11,6 +11,7 @@ const works = defineCollection({
     url: safeLink.optional(), repository: z.string().url().optional(),
     image: z.string().regex(/^\/(?!\/)/).optional(), imageAlt: z.string().optional(),
     audio: z.string().regex(/^\/(?!\/)/).optional(),
+    pageImages: z.array(z.object({ title: z.string(), src: z.string().regex(/^\/(?!\/)/) })).optional(),
   }),
 });
 export const collections = { works };
