@@ -6,7 +6,7 @@ const { work } = Astro.props;
 const isTool = work.data.category === 'tools';
 const isLine = work.data.category === 'line';
 const href = (isTool || isLine) && work.data.url ? work.data.url : workPath(work.id);
-const symbols: Record<string,string> = {tools:'✳',gallery:'▧',line:'☺',music:'♫',other:'◇'};
+const symbols: Record<string,string> = {tools:'✳',gallery:'▧',line:'☺',music:'♫',other:'◇',document:'▤'};
 ---
 <article class={`work-card tone-${work.data.order % 4}`}>
   <a class="card-link" href={href}>

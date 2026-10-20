@@ -5,7 +5,7 @@ const works = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/works' }),
   schema: z.object({
     title: z.string(), description: z.string(),
-    category: z.enum(['tools', 'gallery', 'line', 'music', 'other']),
+    category: z.enum(['tools', 'gallery', 'line', 'music', 'other', 'document']),
     date: z.coerce.date(), draft: z.boolean().default(false),
     order: z.number().default(100), tags: z.array(z.string()).default([]),
     url: safeLink.optional(), repository: z.string().url().optional(),

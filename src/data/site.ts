@@ -12,6 +12,7 @@ export const site = {
   ],
 };
 export const categories = [
+  { slug: 'document', label: 'DOCUMENT', name: 'DOCUMENT', icon: '▤', description: '配信やリス活にまつわる解説を、サイト上で読めます。' },
   { slug: 'tools', label: 'TOOLS', name: '自作ツール', icon: '✳', description: 'リス活から生まれた、ちょっと便利なもの。' },
   { slug: 'gallery', label: 'GALLERY', name: '画像・イラスト', icon: '▧', description: 'つくった絵や画像を、ここに少しずつ。' },
   { slug: 'line', label: 'LINE', name: 'LINEスタンプ・絵文字', icon: '☺', description: 'トークに添える、つくったスタンプと絵文字。' },

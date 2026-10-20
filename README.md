@@ -44,6 +44,14 @@ category は `tools` / `gallery` / `line` / `music` / `other`。dateは `YYYY-MM
 
 ## プロフィール・SNSの変更
 
+## DOCUMENTの記事を追加する
+
+`templates/document.md` をコピーして `src/content/works/記事名.md` として追加します。`category: document` を指定し、タイトル・概要・掲載日・タグ・本文を編集します。`##` の見出しから目次が自動生成されます。公開時は `draft: false` にします。画像は `public/images/documents/記事名/` に配置し、本文から `/images/documents/記事名/画像名.png` で参照できます。
+
+元のDOCX・PDFは公開フォルダに配置せず、閲覧用の本文と必要な画像のみを追加してください。ダウンロードボタンは設けていませんが、表示内容のコピーや保存を完全には制限できません。
+
+## プロフィール・SNSリンクを編集する
+
 `src/data/site.ts` でサイト情報とSNSリンクを管理します。プロフィールの本文は `src/pages/about.astro` で編集できます。XとGitHubを設定済みです。その他のSNSはURLが決まったら `socials` に追加してください。
 
 ## GitHub Pagesで公開する
