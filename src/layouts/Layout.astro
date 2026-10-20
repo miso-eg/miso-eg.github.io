@@ -6,7 +6,7 @@ import { site, categories } from '../data/site';
 interface Props { title?: string; description?: string; }
 const { title, description = site.description } = Astro.props;
 const pathname = Astro.url.pathname;
-const nav = [{slug: '', label: 'HOME'}, {slug: 'about', label: 'ABOUT'}, ...categories];
+const nav = [{slug: '', label: 'HOME'}, {slug: 'about', label: 'PROFILE'}, ...categories];
 ---
 <!doctype html>
 <html lang="ja">
