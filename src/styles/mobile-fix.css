@@ -1,1 +1,4 @@
 @media(max-width:680px){.note-peach strong{font-size:.75rem;white-space:nowrap}.note-peach{height:175px}.art-label{bottom:-5px}}
+
+.footer-links{flex-wrap:wrap;max-width:65%;justify-content:flex-end}
+@media(max-width:680px){.footer-links{max-width:100%;justify-content:flex-start;row-gap:14px}}
