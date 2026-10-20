@@ -10,7 +10,24 @@ const symbols: Record<string,string> = {tools:'✳',gallery:'▧',line:'☺',mus
 ---
 <article class={`work-card tone-${work.data.order % 4}`}>
   <a class="card-link" href={href}>
-    <div class="card-art" aria-hidden="true">{work.data.image ? <img src={work.data.image} alt="" loading="lazy" /> : <><span class="art-orbit"></span><span class="art-symbol">{symbols[work.data.category]}</span><span class="art-caption">{work.data.category.toUpperCase()} / {String(work.data.order).padStart(2,'0')}</span></>}</div>
+    <div class:list={['card-art', { 'full-art': work.data.image && ['document', 'gallery'].includes(work.data.category) }]} aria-hidden="true">{work.data.image ? <img src={work.data.image} alt="" loading="lazy" /> : <><span class="art-orbit"></span><span class="art-symbol">{symbols[work.data.category]}</span><span class="art-caption">{work.data.category.toUpperCase()} / {String(work.data.order).padStart(2,'0')}</span></>}</div>
     <div class="card-content"><div class="tags">{work.data.tags.map(tag => <span>{tag}</span>)}</div><h3>{work.data.title}<span aria-hidden="true">↗</span></h3><p>{work.data.description}</p><span class="card-more">{isTool ? 'ツールを開く' : isLine ? 'LINE STOREで見る' : '詳しく見る'} <span aria-hidden="true">→</span></span></div>
   </a>
 </article>
+
+<style>
+  .card-art.full-art {
+    height: auto;
+    aspect-ratio: 3 / 4;
+    max-height: 480px;
+    padding: 12px;
+    background: #f0ede5;
+  }
+  .card-art.full-art img {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: contain;
+  }
+</style>
+
