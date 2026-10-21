@@ -1,6 +1,8 @@
 ---
 title: 俺のAIは応えてくれない
 description: TikTok Liveでのリス活中に、こんな曲あったら面白いよねという話から生まれた、SunoAIで作ったネタ曲。
+image: /images/ore-no-ai.png
+imageAlt: 夜の部屋のベッドに置かれた、光るスマートフォンとヘッドホン。
 category: music
 date: 2026-10-22
 order: 1
