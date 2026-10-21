@@ -28,6 +28,6 @@ const nav = [{slug: '', label: 'HOME'}, {slug: 'about', label: 'PROFILE'}, ...ca
       <nav class="desktop-nav" aria-label="メインナビゲーション">{nav.map(item => <a href={`/${item.slug}${item.slug ? '/' : ''}`} aria-current={pathname === `/${item.slug}${item.slug ? '/' : ''}` ? 'page' : undefined}>{item.label}</a>)}</nav>
     </header>
     <main id="main"><slot /></main>
-    <footer class="footer wrap"><a class="footer-title" href="/">みそのホームページ <span aria-hidden="true">✳</span></a><div class="footer-links">{site.socials.map(s => <a href={s.url} target="_blank" rel="noopener noreferrer">{s.label} ↗</a>)}</div><small>© {new Date().getUTCFullYear()} miso</small></footer>
+    <footer class="footer wrap"><a class="footer-title" href="/">みそのホームページ</a><div class="footer-links">{site.socials.map(s => <a href={s.url} target="_blank" rel="noopener noreferrer">{s.label} ↗</a>)}</div><small>© {new Date().getUTCFullYear()} miso</small></footer>
   </body>
 </html>
