@@ -6,7 +6,7 @@ import { publishedWorks } from '../lib/works';
 const works = await publishedWorks();
 const sections = categories.map(category => ({
   ...category,
-  items: works.filter(work => work.data.category === category.slug).slice(0, 4),
+  items: works.filter(work => work.data.category === category.slug).slice(0, category.slug === 'tools' ? undefined : 4),
 }));
 ---
 <Layout>
