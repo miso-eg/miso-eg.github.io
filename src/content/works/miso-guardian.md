@@ -4,7 +4,7 @@ description: オーロラの夜空の下、光る角を持つ白い鹿に乗る�
 category: gallery
 date: 2026-10-29
 order: 11
-image: /images/miso-guardian.png
+image: /images/miso-guardian.png?v=3ffdf530
 imageAlt: 緑のオーロラの下、輝く角と宝石の首飾りを持つ白い鹿に乗り、手を振るみそ。
 tags: [みそ, ファンタジー, ガーディアン]
 ---

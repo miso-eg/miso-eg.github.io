@@ -4,7 +4,7 @@ description: 表彰台の上でトロフィーを掲げる、メダルをつけ�
 category: gallery
 date: 2026-10-29
 order: 10
-image: /images/miso-champion.png
+image: /images/miso-champion.png?v=38070345
 imageAlt: 表彰台の上でトロフィーを掲げる、メダルをつけたみそのイラスト。
 tags: [みそ, イラスト, 優勝]
 ---
