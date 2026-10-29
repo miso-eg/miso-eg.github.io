@@ -18,6 +18,8 @@ const nav = [{slug: '', label: 'HOME'}, {slug: 'about', label: 'PROFILE'}, ...ca
     <meta property="og:title" content={title ? `${title} | ${site.name}` : site.name} />
     <meta property="og:description" content={description} /><meta property="og:type" content="website" />
     <meta property="og:url" content={new URL(pathname, Astro.site)} />
+    <meta property="og:image" content={new URL('/images/og-image.jpg', Astro.site)} /><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#faf7ef" /><link rel="icon" type="image/jpeg" href="/images/miso-illustration.jpg" />
   </head>
   <body>
