@@ -5,8 +5,8 @@ category: other
 date: 2026-11-02
 order: 1
 tags: [みその本棚, 制作秘話, AI創作]
-image: /images/miso-bookshelf.png
-imageAlt: 本を読むみそと、みその本棚の紹介。
+image: /images/miso-bookshelf-making.png
+imageAlt: 本棚のある暖かな部屋で、机に原稿を広げて物語を見直すみそ。
 ---
 
 「みその本棚」は、配信での朗読に使える、AIで作成したオリジナル短編小説を掲載するサイトです。
