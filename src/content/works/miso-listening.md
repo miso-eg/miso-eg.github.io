@@ -6,6 +6,6 @@ date: 2026-10-21
 order: 8
 image: /images/miso-listening.png
 imageAlt: ベッドの上で、スマートフォンを見ながら頬杖をついてくつろぐみそ。
-tags: [みそ, リス活]
+tags: [自作, AI使用]
 ---
 暖かな明かりに包まれた部屋で、スマートフォンを見ながらくつろぐみそです。

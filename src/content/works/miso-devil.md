@@ -6,6 +6,6 @@ date: 2026-11-01
 order: 12
 image: /images/miso-devil.png
 imageAlt: 赤い角と翼をつけ、かぼちゃの上で三叉槍を持つみそ。
-tags: [みそ, ハロウィン]
+tags: [自作, AI使用]
 ---
 赤い角と翼をつけ、かぼちゃの上で三叉槍を持つみそ。

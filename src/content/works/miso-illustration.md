@@ -6,6 +6,6 @@ date: 2026-10-16
 order: 2
 image: /images/miso-illustration.jpg
 imageAlt: 豆腐やわかめが浮かぶお味噌汁の中で、手を広げて座るみそのイラスト。
-tags: [みそ, イラスト]
+tags: [自作, AI使用]
 ---
 お味噌汁の中で、手を広げているみそです。
