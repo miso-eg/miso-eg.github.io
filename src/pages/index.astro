@@ -6,7 +6,8 @@ import { publishedWorks } from '../lib/works';
 const works = await publishedWorks();
 const sections = categories.map(category => ({
   ...category,
-  items: works.filter(work => work.data.category === category.slug).slice(0, category.slug === 'tools' ? undefined : 4),
+  random: ['gallery', 'document'].includes(category.slug),
+  items: works.filter(work => work.data.category === category.slug).slice(0, ['tools', 'gallery', 'document'].includes(category.slug) ? undefined : 4),
 }));
 ---
 <Layout>
@@ -18,10 +19,26 @@ const sections = categories.map(category => ({
     </div>
     <p class="section-intro">{category.description}</p>
     {category.items.length > 0
-      ? <div class="work-grid">{category.items.map(work => <WorkCard work={work} />)}</div>
+      ? <div class="work-grid" data-random-preview={category.random ? '' : undefined}>
+          {(category.random ? category.items.slice(0, 4) : category.items).map(work => <WorkCard work={work} />)}
+          {category.random && <template>{category.items.slice(4).map(work => <WorkCard work={work} />)}</template>}
+        </div>
       : <p class="home-empty">作品は準備中です。</p>}
   </section>)}
 </Layout>
 <style>
   .home-empty { color: var(--muted); font-size: .88rem; padding: 24px; border: 1px dashed var(--line); border-radius: 12px; }
 </style>
+
+<script>
+  for (const grid of document.querySelectorAll('[data-random-preview]')) {
+    const extras = grid.querySelector('template');
+    const cards = Array.from(grid.children).filter(el => el !== extras);
+    if (extras) cards.push(...extras.content.children);
+    for (let i = cards.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [cards[i], cards[j]] = [cards[j], cards[i]];
+    }
+    grid.replaceChildren(...cards.slice(0, 4));
+  }
+</script>
