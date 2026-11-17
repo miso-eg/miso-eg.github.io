@@ -3,13 +3,14 @@ import type { CollectionEntry } from 'astro:content';
 import { workPath } from '../lib/works';
 interface Props { work: CollectionEntry<'works'>; }
 const { work } = Astro.props;
+const isHandDrawnGift = work.data.category === 'gallery' && work.data.tags.includes('いただきもの') && work.data.tags.includes('手描き');
 const isTool = work.data.category === 'tools';
 const isLine = work.data.category === 'line';
 const isService = work.data.category === 'service';
 const href = (isTool || isLine || isService) && work.data.url ? work.data.url : workPath(work.id);
 const symbols: Record<string,string> = {service:'◇',tools:'✳',gallery:'▧',line:'☺',music:'♫',other:'◇',document:'▤'};
 ---
-<article class={`work-card tone-${work.data.order % 4}`}>
+<article class:list={[`work-card tone-${work.data.order % 4}`, { 'hand-drawn-gift': isHandDrawnGift }]}>
   <a class="card-link" href={href}>
     <div class:list={['card-art', { 'full-art': work.data.image && ['document', 'gallery'].includes(work.data.category) }]} aria-hidden="true">{work.data.image ? <img draggable={work.data.category === 'gallery' ? 'false' : undefined} style={work.data.category === 'gallery' ? 'pointer-events:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none' : undefined} src={work.data.image} alt="" loading="lazy" /> : <><span class="art-orbit"></span><span class="art-symbol">{symbols[work.data.category]}</span><span class="art-caption">{work.data.category.toUpperCase()} / {String(work.data.order).padStart(2,'0')}</span></>}</div>
     <div class="card-content"><div class="tags">{work.data.tags.map(tag => <span>{tag}</span>)}</div><h3>{work.data.title}<span aria-hidden="true">↗</span></h3><p>{work.data.description}</p><span class="card-more">{isTool ? 'ツールを開く' : isLine ? 'LINE STOREで見る' : isService ? 'サービスを開く' : '詳しく見る'} <span aria-hidden="true">→</span></span></div>
@@ -17,6 +18,9 @@ const symbols: Record<string,string> = {service:'◇',tools:'✳',gallery:'▧',
 </article>
 
 <style>
+  .work-card.hand-drawn-gift { background: #f0f5ec; border-color: #bdcfb7; }
+  .hand-drawn-gift .card-art.full-art { background: #e4eddf; }
+  .hand-drawn-gift .tags span { background: #f8fbf5; border-color: #bdcfb7; }
   .card-art.full-art {
     height: auto;
     aspect-ratio: 3 / 4;
